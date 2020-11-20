@@ -1,0 +1,617 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,600;1,400&display=swap");
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video,
+button,
+input,
+textarea {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+button {
+  background: none;
+  border: none;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+section.wrapper {
+  max-width:1000px;
+  margin:auto;
+  overflow: hidden;
+  height: 100vh;
+}
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+:root {
+  --white: #fff;
+  --black: #000;
+  --bg: #f3f6fb;
+  --grey: #999;
+  --dark: #1a1a1a;
+  --light: #e6e6e6;
+  --wrapper: 1000px;
+  --blue: #0059ff;
+}
+
+nav.navbar {
+  background: var(--white);
+  min-height: 60px;
+  padding: 10px 0;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
+}
+
+nav.navbar .navbar-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  position: relative;
+  min-height: 40px;
+}
+
+nav.navbar .navbar-container .logo {
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+  align-content: center;
+  flex: 0 1 auto;
+}
+
+nav.navbar .navbar-container .logo img {
+  height: 4rem;
+}
+
+nav.navbar .navbar-container .btn-settings {
+  position: absolute;
+  right: 0;
+  border: 1px solid #e8e8e8;
+  color: #333;
+  border-radius: 6px;
+  padding: 7px 20px;
+}
+
+nav.navbar .navbar-container .btn-settings:hover {
+  cursor: pointer;
+  background: #e8e8e8;
+}
+
+@media screen and (max-width: 767px) {
+  nav.navbar .navbar-container .btn-settings {
+    padding: 7px 12px;
+  }
+}
+
+body {
+  background: var(--bg);
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  font-family: "Rubik", sans-serif;
+  color: #333333;
+  height: 100%;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  padding-left: 32px;
+  padding-right: 32px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.row .col-half {
+  width: 50%;
+}
+
+#main-chat {
+  position: relative;
+  height: calc(100vh - 70px);
+  overflow-y: scroll;
+  padding-top: 24px;
+  padding-bottom: 80px;
+}
+
+#main-chat .main-chat__write {
+  background: var(--white);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  flex: 0 0 auto;
+  box-sizing: border-box;
+  max-width: 1000px;  
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#main-chat .main-chat__write input {
+  padding: 10px 15px;
+  flex: 1;
+  margin-right: 5px;
+}
+
+#main-chat .main-chat__write #btn-send {
+  color: var(--white);
+  background: #60069c;
+  padding: 6px 10px;
+  width: 90px;
+  border-radius: 6px;
+  transition: all 0.3s ease-in-out;
+}
+
+#main-chat .main-chat__write #btn-send svg {
+  position: relative;
+  top: 1px;
+}
+
+#main-chat .main-chat__write #btn-send:hover {
+  cursor: pointer;
+  background: #7e08cd;
+}
+
+#main-chat #main-chat__conversation .conversation-start {
+  position: relative;
+  width: 100%;
+  margin-bottom: 27px;
+  text-align: center;
+}
+
+#main-chat #main-chat__conversation .conversation-start span {
+  font-size: 14px;
+  display: inline-block;
+  color: var(--grey);
+}
+
+#main-chat #main-chat__conversation .conversation-start span:before, #main-chat #main-chat__conversation .conversation-start span:after {
+  position: absolute;
+  top: 10px;
+  display: inline-block;
+  width: 30%;
+  height: 1px;
+  content: "";
+  background-color: var(--light);
+}
+
+#main-chat #main-chat__conversation .conversation-start span:before {
+  left: 0;
+}
+
+#main-chat #main-chat__conversation .conversation-start span:after {
+  right: 0;
+}
+
+#main-chat #main-chat__conversation .bubble {
+  font-size: 15px;
+  position: relative;
+  display: inline-block;
+  clear: both;
+  padding: 13px 14px;
+  vertical-align: top;
+  border-radius: 5px;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.05);
+  margin-bottom: 38px;
+}
+
+#main-chat #main-chat__conversation .bubble .message-time {
+  position: absolute;
+  bottom: 103%;
+  font-size: 12px;
+  color: #999;
+}
+
+#main-chat #main-chat__conversation .bubble:before {
+  position: absolute;
+  top: 19px;
+  display: block;
+  width: 8px;
+  height: 6px;
+  content: "\00a0";
+  transform: rotate(29deg) skew(-35deg);
+}
+
+#main-chat #main-chat__conversation .bubble.you {
+  float: left;
+  color: var(--white);
+  background-color: #60069c;
+  align-self: flex-start;
+}
+
+#main-chat #main-chat__conversation .bubble.you:before {
+  left: -3px;
+  background-color: #60069c;
+}
+
+#main-chat #main-chat__conversation .bubble.me {
+  float: right;
+  color: var(--dark);
+  background-color: var(--white);
+  align-self: flex-end;
+}
+
+#main-chat #main-chat__conversation .bubble.me:before {
+  right: -3px;
+  background-color: var(--white);
+}
+
+#main-chat #main-chat__conversation .bubble .message img {
+  width: 150px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.1s ease-in;
+}
+
+.modal.is-visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal .modal-dialog {
+  position: relative;
+  max-width: 800px;
+  min-width: 420px;
+  max-height: 80vh;
+  border-radius: 10px;
+  font-size: 16px;
+  background: var(--white);
+  overflow: auto;
+  cursor: default;
+}
+
+.modal .modal-dialog h5 {
+  text-transform: uppercase;
+  margin: 0 0 20px;
+  font-weight: 700;
+  font-size: 15px;
+  color: #323446;
+}
+
+@media screen and (max-width: 767px) {
+  .modal .modal-dialog {
+    min-width: auto;
+    width: 100%;
+  }
+}
+
+.modal .modal-dialog .row + h5 {
+  margin-top: 32px;
+}
+
+.modal .modal-dialog > * {
+  padding: 1rem;
+}
+
+.modal .modal-header {
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.modal .modal-header .close-modal {
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.modal .modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal .modal-header .modal-close {
+  font-size: 1.5rem;
+}
+
+.modal .modal p + p {
+  margin-top: 1rem;
+}
+
+.modal .modal-footer {
+  background: var(--bg);
+}
+
+.modal .modal-footer button {
+  display: block;
+  font-weight: 400;
+  width: 100%;
+  padding: 10px 10px;
+  background: #60069c;
+  color: var(--white);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+form label {
+  color: #525466;
+}
+
+form .form-check label {
+  line-height: 30px;
+  padding-left: 5px;
+}
+
+.custom-radio {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+  border-radius: 40px;
+}
+
+.custom-radio .css-label {
+  font-weight: normal;
+  margin: 0px;
+}
+
+.custom-radio [type="radio"]:checked,
+.custom-radio [type="radio"]:not(:checked) {
+  position: absolute;
+  left: -9999px;
+}
+
+.custom-radio [type="radio"]:checked + label,
+.custom-radio [type="radio"]:not(:checked) + label {
+  position: relative;
+  padding: 7px 10px 7px 30px;
+  cursor: pointer;
+  line-height: 20px;
+  display: inline-block;
+  color: #525466;
+  font-size: 14px;
+}
+
+.custom-radio [type="radio"]:checked + label:before,
+.custom-radio [type="radio"]:not(:checked) + label:before {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 7px;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #ddd;
+  border-radius: 100%;
+  background: #fff;
+}
+
+.custom-radio [type="radio"]:checked + label:after,
+.custom-radio [type="radio"]:not(:checked) + label:after {
+  content: "";
+  width: 12px;
+  height: 12px;
+  background: #60069c;
+  position: absolute;
+  top: 11px;
+  left: 9px;
+  border-radius: 100%;
+  transition: all 0.2s ease;
+}
+
+.custom-radio [type="radio"]:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.custom-radio [type="radio"]:checked + label:after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked {
+  position: absolute;
+  left: -9999px;
+}
+
+[type="checkbox"]:not(:checked) + label,
+[type="checkbox"]:checked + label {
+  position: relative;
+  padding-left: 1.95em;
+  cursor: pointer;
+  color: #fff;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+/* checkbox aspect */
+[type="checkbox"]:not(:checked) + label:before,
+[type="checkbox"]:checked + label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 22px;
+  height: 22px;
+  border: 1px solid #ccc;
+  background: #fff;
+}
+
+/* checked mark aspect */
+[type="checkbox"]:not(:checked) + label:after,
+[type="checkbox"]:checked + label:after {
+  content: "\2714";
+  position: absolute;
+  top: 0.3em;
+  left: 0.25em;
+  font-size: 1.3em;
+  line-height: 0.8;
+  color: #60069c;
+  transition: all 0.2s;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+}
+
+/* checked mark aspect changes */
+[type="checkbox"]:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+
+[type="checkbox"]:checked + label:after {
+  opacity: 1;
+  transform: scale(1);
+}

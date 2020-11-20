@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <section class="wrapper">
+    
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-container">
+                <a href="" class="logo">                    
+                    <img src="logo.png" alt="Oranum logo"/>                   
+                </a>
+                <button type="button" class="btn btn-settings open-modal" data-open="modal1">Settings</button>
+            </div>
+        </div>
+    </nav>
+
+    <div id="main-chat" class="container">
+        <div id="main-chat__conversation">
+            <div class="conversation-start">
+                <span>Today</span>
+            </div>
+        </div>        
+        
+            <form action="#" class="main-chat__write" autocomplete="off">
+                <input id="message-box" type="text" placeholder="Enter a message..">
+                <button id="btn-send" class="btn" type="submit">Send 
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="14"
+                        viewBox="0 0 24 24" fill="#ffffff">
+                        <path
+                            d="M21.426,11.095l-17-8c-0.35-0.163-0.763-0.112-1.061,0.133C3.066,3.473,2.937,3.868,3.03,4.242L4.969,12L3.03,19.758 c-0.094,0.374,0.036,0.77,0.335,1.015C3.548,20.923,3.772,21,4,21c0.145,0,0.29-0.031,0.426-0.095l17-8 C21.776,12.74,22,12.388,22,12S21.776,11.26,21.426,11.095z M5.481,18.197L6.32,14.84L12,12L6.32,9.16L5.481,5.803L18.651,12 L5.481,18.197z">
+                        </path>
+                    </svg>
+                </button>
+            </form>        
+        
+    
+    </div>
+    <div class="modal" id="modal1">
+        <div class="modal-dialog">
+            <header class="modal-header">
+                Settings
+                <button class="close-modal" aria-label="close modal" data-close>✕</button>
+            </header>
+            <section class="modal-content">
+                <form>
+                    <h5>Clock display</h5>
+                    <div class="row">
+                        <div class="form-check col-half">
+                            <div class="custom-radio">
+                                <input value="24" type="radio" id="clock1" name="timedisplay">
+                                <label for="clock1" class="css-label">24 hours</label>
+                            </div>
+                        </div>
+                        <div class="form-check col-half">
+                            <div class="custom-radio">
+                                <input value="12" type="radio" id="clock2" name="timedisplay">
+                                <label for="clock2" class="css-label">12 hours</label>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </section>
+            <footer class="modal-footer">
+                <button id="save-preferences">Save</button>
+            </footer>
+        </div>
+    </div>    
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/main.js" type="module"></script>
+    </section>
+</body>
+
+</html>
