@@ -4,5 +4,5 @@
 - Dependencies: https://expressjs.com and https://socket.io.
 
 # How to run
-`npm install`
-`npm run start`
+- `npm install`
+- `npm run start`
